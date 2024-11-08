@@ -23,19 +23,19 @@ class DrawerMenu extends StatelessWidget {
             ),
           ),
           ListTile(
-            title: const Text('Pagina Principal'),
+            title: const Text('Página Principal'),
             onTap: () {
               Get.offNamed('/home');
             },
           ),
           ListTile(
-            title: const Text('Interes Simple'),
+            title: const Text('Interés Simple'),
             onTap: () {
               Get.offNamed('/simple_interest');
             },
           ),
           ListTile(
-            title: const Text('Interes Compuesto'),
+            title: const Text('Interés Compuesto'),
             onTap: () {
               Get.offNamed('/compound_interest');
             },
@@ -47,7 +47,7 @@ class DrawerMenu extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text('Retorno de Interes'),
+            title: const Text('Retorno de Interés'),
             onTap: () {
               Get.offNamed('/interest_return');
             },
@@ -64,8 +64,16 @@ class DrawerMenu extends StatelessWidget {
               Get.offNamed('/amort_cap_systems');
             },
           ),
+          // Nueva entrada para la calculadora de préstamos
+          ListTile(
+            title: const Text('Calculadora de Préstamos'),
+            onTap: () {
+              Get.offNamed('/loan_calculator'); // Navega a la calculadora de préstamos
+            },
+          ),
         ],
       ),
     );
   }
 }
+

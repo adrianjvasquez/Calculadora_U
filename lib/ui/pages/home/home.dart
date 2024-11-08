@@ -1,5 +1,6 @@
 import 'package:calculadora_de_interes/ui/pages/widgets/button_operation.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart'; // Asegúrate de importar Get para la navegación
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -8,6 +9,17 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 170, 201, 209),
+      appBar: AppBar(
+        backgroundColor: const Color(0xFF013542),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () {
+              Get.toNamed('/settings'); // Navega a la página de configuración
+            },
+          ),
+        ],
+      ),
       body: SingleChildScrollView(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -24,7 +36,7 @@ class Home extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(top: 50),
                     child: Text(
-                      'Interest Calc',
+                      'Calculadora de Interes',
                       style: TextStyle(
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
@@ -79,9 +91,20 @@ class Home extends StatelessWidget {
                 icon: Icons.money_rounded,
               ),
             ],
-          )
+          ),
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ButtonOperation(
+                route: "/loan_calculator", // Ruta para la calculadora de préstamos
+                title: "Calculadora de Préstamos",
+                icon: Icons.money, // Puedes elegir un ícono que te guste
+              ),
+            ],
+          ),
         ],
       )),
     );
   }
 }
+
